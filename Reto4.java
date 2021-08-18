@@ -4,13 +4,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GUIreto3 extends Application {
+public class Reto4 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUIreto3FM.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/reto4form.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        stage.setTitle("GUI Reto 3");
+        stage.setTitle("GUI Reto 4");
         stage.setScene(scene);
         stage.show();        
     }

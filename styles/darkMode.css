@@ -26,3 +26,7 @@
 .round-border{
     -fx-background-radius: 100;
 }
+
+.tab-pane .tab-header-area .tab-header.background {
+    -fx-background-color: #282828;
+}

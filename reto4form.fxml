@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="600.0" styleClass="primary-color" stylesheets="@../../../reto3/code/reto3/src/styles/lightMode.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reto4Controller">
+   <children>
+      <ImageView fx:id="misionimg" fitHeight="75.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="primary-color">
+         <image>
+            <Image url="@img/misionLight.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="uninorteimg" fitHeight="150.0" fitWidth="150.0" layoutX="450.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" styleClass="primary-color">
+         <image>
+            <Image url="@img/uninorteLight.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="128.0" layoutY="7.0" prefHeight="66.0" prefWidth="328.0" styleClass="primary-color" text="Lector del nivel de la calidad del agua en el Atlántico" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Button fx:id="modebtn" layoutX="553.0" mnemonicParsing="false" onMouseClicked="#changeMode">
+         <graphic>
+            <ImageView fx:id="modeimg" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/moon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="round-border" />
+            <String fx:value="primary-color" />
+         </styleClass>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Label layoutX="196.0" layoutY="75.0" styleClass="primary-color" text="Grupo 57 - Felipe Munevar" />
+      <Label fx:id="modetxt" layoutX="478.0" layoutY="11.0" styleClass="primary-color" text="Light Mode" />
+      <Line endX="485.0" endY="-41.131866455078125" layoutX="115.0" layoutY="138.0" startX="-115.0" startY="-38.0" styleClass="primary-color" />
+      <Label fx:id="statustxt" layoutX="13.0" layoutY="452.0" styleClass="primary-color" />
+      <TabPane layoutY="103.0" prefHeight="329.0" prefWidth="601.0" styleClass="primary-color" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ingresar">
+            <content>
+              <AnchorPane maxHeight="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="601.0">
+                     <children>
+                        <Label layoutX="205.0" layoutY="45.0" styleClass="primary-color" text="Nombre" />
+                        <Label layoutX="19.0" layoutY="45.0" styleClass="primary-color" text="ID" />
+                        <Label layoutX="19.0" layoutY="118.0" styleClass="primary-color" text="Municipio" />
+                        <TextField fx:id="nametxt" layoutX="205.0" layoutY="61.0" styleClass="secondary-color" />
+                        <TextField fx:id="idtxt" layoutX="17.0" layoutY="61.0" styleClass="secondary-color" />
+                        <TextField fx:id="towntxt" layoutX="17.0" layoutY="134.0" styleClass="secondary-color" />
+                        <Label layoutX="395.0" layoutY="45.0" prefHeight="16.0" prefWidth="171.0" styleClass="primary-color" text="Tipo de Cuerpo de Agua" />
+                        <Label layoutX="205.0" layoutY="118.0" styleClass="primary-color" text="Tipo de Agua" />
+                        <Label layoutX="395.0" layoutY="118.0" styleClass="primary-color" text="IRCA" />
+                        <TextField fx:id="ircatxt" layoutX="395.0" layoutY="134.0" styleClass="secondary-color" />
+                        <ComboBox fx:id="sweetcbx" layoutX="205.0" layoutY="134.0" prefHeight="24.0" prefWidth="171.0" styleClass="combo-box" />
+                        <ComboBox fx:id="typewatercbx" layoutX="395.0" layoutY="61.0" prefHeight="24.0" prefWidth="171.0" styleClass="combo-box" />
+                        <Button layoutX="255.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#insertClick" prefHeight="24.0" prefWidth="73.0" styleClass="secondary-color" text="Agregar">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Procesar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="addareatxt" editable="false" layoutX="24.0" layoutY="84.0" prefHeight="200.0" prefWidth="250.0" styleClass="secondary-color">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextArea>
+                        <TextArea fx:id="outputtxt" editable="false" layoutX="315.0" layoutY="84.0" prefHeight="200.0" prefWidth="250.0" styleClass="secondary-color">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextArea>
+                        <Button layoutX="403.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#runClick" styleClass="secondary-color" text="Procesar">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                        <Button layoutX="112.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#getClick" styleClass="secondary-color" text="Obtener">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Editar/Eliminar">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="deletebtn" layoutX="191.0" layoutY="251.0" mnemonicParsing="false" onMouseClicked="#deleteClick" prefHeight="24.0" prefWidth="73.0" styleClass="secondary-color" text="Eliminar">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                        <Label layoutX="207.0" layoutY="104.0" styleClass="primary-color" text="Nombre" />
+                        <Label layoutX="19.0" layoutY="104.0" styleClass="primary-color" text="ID" />
+                        <Label layoutX="19.0" layoutY="177.0" styleClass="primary-color" text="Municipio" />
+                        <TextField fx:id="nameEDtxt" layoutX="207.0" layoutY="119.0" styleClass="secondary-color" />
+                        <TextField fx:id="idEDtxt" layoutX="19.0" layoutY="119.0" styleClass="secondary-color" />
+                        <TextField fx:id="townEDtxt" layoutX="19.0" layoutY="193.0" styleClass="secondary-color" />
+                        <Label layoutX="395.0" layoutY="104.0" prefHeight="16.0" prefWidth="171.0" styleClass="primary-color" text="Tipo de Cuerpo de Agua" />
+                        <Label layoutX="207.0" layoutY="177.0" styleClass="primary-color" text="Tipo de Agua" />
+                        <Label layoutX="395.0" layoutY="177.0" styleClass="primary-color" text="IRCA" />
+                        <TextField fx:id="ircaEDtxt" layoutX="395.0" layoutY="193.0" styleClass="secondary-color" />
+                        <ComboBox fx:id="sweetEDcbx" layoutX="207.0" layoutY="193.0" prefHeight="24.0" prefWidth="171.0" styleClass="combo-box" />
+                        <ComboBox fx:id="typewaterEDcbx" layoutX="396.0" layoutY="119.0" prefHeight="24.0" prefWidth="171.0" styleClass="combo-box" />
+                        <Button fx:id="editbtn" layoutX="82.0" layoutY="251.0" mnemonicParsing="false" onMouseClicked="#editClick" prefHeight="24.0" prefWidth="73.0" styleClass="secondary-color" text="Editar">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                        <Label layoutX="148.0" layoutY="42.0" styleClass="primary-color" text="ID" />
+                        <TextField fx:id="idsearchtxt" layoutX="179.0" layoutY="38.0" styleClass="secondary-color" />
+                        <Button layoutX="374.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#searchClick" prefHeight="24.0" prefWidth="73.0" styleClass="secondary-color" text="Buscar">
+                           <effect>
+                              <Blend />
+                           </effect>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Acerca">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="30.0" layoutY="20.0" styleClass="primary-color" text="Version: 0.0.1" />
+                        <Label layoutX="30.0" layoutY="50.0" styleClass="primary-color" text="JavaFX 16" />
+                        <Label layoutX="30.0" layoutY="80.0" styleClass="primary-color" text="Java 16" />
+                        <Label layoutX="30.0" layoutY="110.0" styleClass="primary-color" text="SQLite" />
+                        <Label layoutX="30.0" layoutY="140.0" styleClass="primary-color" text="Copyright (c) 2021, Felipe Munevar" />
+                        <Button layoutX="410.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#donateClick" styleClass="secondary-color" text="Donar..." />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,7 +1,7 @@
 public class CuerpoDeAgua extends ObjetoGeografico {
     // Attributes
     private String typeOfWater;
-    private boolean sweet;
+    private String sweet;
     private double irca;
     // Methods
         // Constructor
@@ -9,7 +9,7 @@ public class CuerpoDeAgua extends ObjetoGeografico {
     public CuerpoDeAgua() {
     }
 
-    public CuerpoDeAgua(String name, int id, String town, String typeOfWater, boolean sweet, double irca) {
+    public CuerpoDeAgua(String name, int id, String town, String typeOfWater, String sweet, double irca) {
         super(name, id, town);
         this.typeOfWater = typeOfWater;
         this.sweet = sweet;
@@ -39,11 +39,11 @@ public class CuerpoDeAgua extends ObjetoGeografico {
         this.typeOfWater = typeOfWater;
     }
 
-    public boolean isSweet() {
+    public String getSweet() {
         return sweet;
     }
 
-    public void setSweet(boolean sweet) {
+    public void setSweet(String sweet) {
         this.sweet = sweet;
     }
 
