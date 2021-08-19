@@ -244,6 +244,7 @@ public class reto4Controller {
 
         outputtxt.setText(outputtxt.getText() + "\n");
         outputtxt.setText(outputtxt.getText() + String.format("%.2f", sum / bodiesOfWater.size()));
+        statustxt.setText("Datos procesados con exito");
     }
 
     @FXML
@@ -376,17 +377,9 @@ public class reto4Controller {
         alert.setTitle("Gracias por tu contribución");
         Hyperlink link = new Hyperlink("Click here!");
         alert.setGraphic(link);
-        // link.setOnAction(e -> {
-        //     Desktop d = new Desktop.getDesktop();
-        //     try {
-        //         d.browse(new URI("http://www.google.com"));
-        //     } catch (IOException err) {
-
-        //     } catch(URISyntaxException err){
-
-        //     }
-            
-        // });
+        link.setOnAction(e -> {
+            statustxt.setText("Gracias!!!");
+        });
         alert.showAndWait();
     }
 
